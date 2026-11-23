@@ -8,6 +8,8 @@ This is a small program that writes one short text for make.fun's bounty `u-dera
 For three years my father called the dog by my name. The dog has been dead since 2019. I answer anyway.
 ```
 
-Run it with `MAKEFUN_OUTPUT_DIR=out python3 main.py`; it prints the character count to stderr and writes the text, with no trailing newline, to `entry.txt` in that folder (default `/output`).
+It prints the character count to stderr and writes the text, with no trailing newline, to `entry.txt` in that folder; `OUTPUT_DIR` is accepted as a fallback name, and `/output` is used when neither is set.
+
+MAKEFUN_OUTPUT_DIR=out python3 main.py
 
 MIT licensed; see LICENSE.
