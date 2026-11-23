@@ -31,10 +31,16 @@ def output_dir() -> Path:
     return Path("/output")
 
 
-def main() -> int:
+def checked_text() -> str:
+    """Return TEXT after checking it is one short, single line."""
     text = TEXT
     assert 1 <= len(text) <= 280, f"entry text must be 1..280 chars, got {len(text)}"
+    assert "\n" not in text and "\r" not in text, "entry text must be a single line"
+    return text
 
+
+def main() -> int:
+    text = checked_text()
     target_dir = output_dir()
     target_dir.mkdir(parents=True, exist_ok=True)
     entry = target_dir / "entry.txt"
